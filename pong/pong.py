@@ -36,8 +36,8 @@ bola.shape("square")
 bola.color("white")
 bola.penup()
 bola.goto(0, 0)
-bola.dx = 0.13
-bola.dy = 0.13
+bola.dx = 5
+bola.dy = 5
 
 #placar
 placar = turtle.Turtle()
@@ -91,6 +91,7 @@ wn.onkeypress(descer_paleta2, "Down")
 
 #while maingame loop
 while True:
+    pygame.time.Clock().tick(30)
     wn.update()
 
     #mover bola
@@ -121,10 +122,10 @@ while True:
         placar.write("Player 1 : {}   Player 2: {}".format(pontuacao_1, pontuacao_2), align="center", font=("Arial", 24, "normal"))
 
     #colisão da paleta e da bola
-    if (bola.xcor() > 340 and bola.xcor() < 350) and (bola.ycor() < paleta_2.ycor() + 40 and bola.ycor() > paleta_2.ycor() - 50):
+    if (bola.xcor() > 340 and bola.xcor() < 350) and (bola.ycor() < paleta_2.ycor() + 50 and bola.ycor() > paleta_2.ycor() - 50):
         bola.setx(340)
         bola.dx *= -1
     
-    if (bola.xcor() < -340 and bola.xcor() > -350) and (bola.ycor() < paleta_1.ycor() + 40 and bola.ycor() > paleta_1.ycor() - 50):
+    if (bola.xcor() < -340 and bola.xcor() > -350) and (bola.ycor() < paleta_1.ycor() + 50 and bola.ycor() > paleta_1.ycor() - 50):
         bola.setx(-340)
         bola.dx *= -1

@@ -124,16 +124,16 @@ while True:
     #colisão da paleta e da bola
     if (bola.xcor() > 340 and bola.xcor() < 350) and (bola.ycor() < paleta_2.ycor() + 50 and bola.ycor() > paleta_2.ycor() - 50):
         bola.setx(340)
-        bola.dx +=3
-        bola.dy +=3
+        bola.dx += 3
+        bola.dy += 3
         bola.dx *= -1
         
         bola.color("red")
     
     if (bola.xcor() < -340 and bola.xcor() > -350) and (bola.ycor() < paleta_1.ycor() + 50 and bola.ycor() > paleta_1.ycor() - 50):
         bola.setx(-340)
-        bola.dx +=3
-        bola.dy +=3
+        bola.dx += 3
+        bola.dy += 3
         bola.dx *= -1
         
         bola.color("blue")

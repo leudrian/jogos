@@ -7,9 +7,11 @@ import random
 
 WINDOW_SIZE = (600, 600)
 PIXEL_SIZE = 10
+white = (255, 255, 255)
 score = 0
 hi_score = 0
 screen = pygame.display.set_mode(WINDOW_SIZE)
+
 def colision(pos1, pos2):
     return pos1 == pos2
 
@@ -58,6 +60,8 @@ while True:
     text1 = font.render("Hi Score: " + str(hi_score), True, '#ffffff')
     screen.blit(text, [0, 0])
     screen.blit(text1, [450, 0])
+    pygame.draw.line(screen, white,[5, 20], [595, 20], 1)
+    
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
